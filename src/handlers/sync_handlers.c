@@ -8,6 +8,7 @@
 
 void hello_world(Req *req, Res *res)
 {
+    (void)req;
     cJSON *json = cJSON_CreateObject();
     cJSON_AddStringToObject(json, "message", "Hello World!");
     char *json_string = cJSON_PrintUnformatted(json);
@@ -18,6 +19,7 @@ void hello_world(Req *req, Res *res)
 
 void get_all_users(Req *req, Res *res)
 {
+    (void)req;
     PGpool *pool = db_get_pool();
     if (!pool) {
         send_text(res, 500, "Database pool unavailable");

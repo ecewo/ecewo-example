@@ -55,7 +55,7 @@ void login(Req *req, Res *res)
     ctx->password = arena_strdup(res->arena, jpass->valuestring);
     cJSON_Delete(json);
 
-    PGquery *pg = pg_query_create(db_get_pool(), res->arena);
+    PGquery *pg = pg_query_create(db_get_pool(), res);
     if (!pg)
     {
         send_text(res, 500, "Database connection error");

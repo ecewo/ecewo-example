@@ -29,7 +29,7 @@ void del_category(Req *req, Res *res)
 
     ctx->res = res;
 
-    PGquery *pg = pg_query_create(db_get_pool(), res->arena);
+    PGquery *pg = pg_query_create(db_get_pool(), res);
     if (!pg)
     {
         send_text(res, 500, "Database connection error");

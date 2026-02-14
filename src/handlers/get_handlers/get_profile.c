@@ -24,7 +24,7 @@ void get_profile(Req *req, Res *res)
     ctx->res = res;
     ctx->is_author = auth_ctx->is_author;
 
-    PGquery *pg = pg_query_create(db_get_pool(), res->arena);
+    PGquery *pg = pg_query_create(db_get_pool(), res);
     if (!pg)
     {
         send_text(res, 500, "Failed to create async context");

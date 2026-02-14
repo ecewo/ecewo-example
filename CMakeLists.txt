@@ -21,7 +21,7 @@ include(FetchContent)
 FetchContent_Declare(
     ecewo
     GIT_REPOSITORY https://github.com/savashn/ecewo.git
-    GIT_TAG v3.1.0
+    GIT_TAG v3.2.0
     GIT_SHALLOW TRUE
 )
 
@@ -32,7 +32,7 @@ ecewo_plugins(
   session@v0.1.0
   helmet@v0.1.0
   cors@v0.1.0
-  postgres@v0.1.0
+  postgres@v0.2.0
 )
 
 add_executable(server
